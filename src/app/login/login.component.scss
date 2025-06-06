@@ -1,0 +1,25 @@
+.login-box {
+  max-width: 900px;
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+img.object-cover {
+  object-fit: cover;
+  height: 100%;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.captcha-display {
+  .captcha-box {
+    font-size: 1.2rem;
+    letter-spacing: 0.4rem;
+  }
+}
