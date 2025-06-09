@@ -36,6 +36,7 @@ export class RedirectComponent implements OnInit {
       code: this.queryParams['code'],
       redirect_uri: 'http://localhost:4200/redirect',
       client_id: 'onion-web-app',
+      client_secret: 'FsgWEAbeX9qcdE1tBWWMNBhr4MbTHnOd',
       cookie: document.cookie // not ideal, but if needed, grabs the whole cookie string
     };
 
@@ -69,6 +70,12 @@ export class RedirectComponent implements OnInit {
       }
     });
 
+  }
+  login() {
+    window.open("https://192.46.212.12:8443/realms/supplyvalid/protocol/openid-connect/auth?client_id=onion-web-app&redirect_uri=http://localhost:4200/redirect&response_type=code&scope=openid", "_blank")
+  }
+  logout() {
+    window.open("https://192.46.212.12:8443/realms/supplyvalid/protocol/openid-connect/logout?redirect_uri=http%3A%2F%2Flocalhost%3A4200%2Flogin")
   }
 }
 

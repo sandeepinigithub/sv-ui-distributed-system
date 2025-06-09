@@ -17,6 +17,7 @@ export class RedirectService {
     body.set('code', payload.code);
     body.set('redirect_uri', payload.redirect_uri);
     body.set('client_id', payload.client_id);
+    body.set('client_secret', payload.client_secret);
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',

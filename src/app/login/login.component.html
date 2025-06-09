@@ -1,4 +1,15 @@
-<div class="container vh-100 d-flex align-items-center justify-content-center">
+<div class="d-flex justify-content-between align-items-center mx-3 mt-3">
+    <div class="left">
+        <img src="assets/images/doca_logo.jpg" alt="left1" srcset="" height="70">
+    </div>
+    <div class="right">
+        <img class="me-3" src="assets/images/banners/iyc_logo.png" height="70" alt="right1">
+        <img src="assets/images/azadi-amrit.png" alt="right2" height="60">
+        <img src="assets/images/g20-logo.png" alt="right2" height="60">
+    </div>
+</div>
+{{userInfo | json}}
+<div class="container d-flex align-items-center justify-content-center">
     <div class="login-box row shadow-lg">
         <!-- Left Image Section -->
         <div class="col-md-6 p-0 d-none d-md-block">
@@ -10,17 +21,18 @@
         <div class="col-md-6 bg-white p-4 login-form">
             <h5 class="mb-4 text-muted text-center">Login to your account</h5>
 
-            <form>
+            <form [formGroup]="loginForm">
                 <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Mobile Number" />
+                    <input type="text" class="form-control" placeholder="Mobile Number"
+                        formControlName="mobileNumber" />
                 </div>
 
                 <div class="mb-3">
-                    <input type="password" class="form-control" placeholder="Password" />
+                    <input type="password" class="form-control" placeholder="Password" formControlName="password" />
                 </div>
 
                 <div class="mb-2">
-                    <input type="text" class="form-control" placeholder="Captcha" />
+                    <input type="text" class="form-control" placeholder="Captcha" formControlName="captcha" />
                 </div>
 
                 <div class="mb-3 d-flex align-items-center justify-content-between captcha-display">
@@ -28,7 +40,7 @@
                     <button type="button" class="btn btn-light border"><i class="bi bi-arrow-clockwise"></i></button>
                 </div>
 
-                <button type="submit" class="btn btn-success w-100 mb-2">Log In</button>
+                <button type="button" class="btn btn-success w-100 mb-2" (click)="onSubmit()">Log In</button>
 
                 <div class="d-flex justify-content-between small">
                     <a href="#" class="text-danger">Register Farmer?</a>
@@ -41,5 +53,5 @@
 
 <footer class="text-center mt-4 text-muted small">
     © Copyright 2025. Current Version: 1.0.3
-    <div>Powered by <strong>SUPPLY VALID</strong></div>
+    <div>Powered by <strong>SupplyValid</strong></div>
 </footer>
