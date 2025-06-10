@@ -1,0 +1,47 @@
+.admin-layout {
+    height: 100vh;
+    overflow: hidden;
+
+    .sidebar {
+        width: 260px;
+        background-color: #0f2a4c;
+
+        .logo img {
+            max-height: 50px;
+        }
+
+        .nav-link {
+            padding: 12px 12px;
+            font-size: 15px;
+            transition: all 0.2s ease;
+
+            i {
+                font-size: 18px;
+            }
+
+            &:hover {
+                background-color: #1c3a63;
+                border-radius: 4px;
+            }
+        }
+    }
+
+    .main-content {
+        background-color: #f9f9f9;
+
+        .topbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+
+            .notification .badge {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        main {
+            overflow-y: auto;
+            height: calc(100vh - 60px); // Adjust based on topbar height
+        }
+    }
+}

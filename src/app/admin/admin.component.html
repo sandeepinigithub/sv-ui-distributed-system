@@ -1,2 +1,44 @@
+<div class="admin-layout d-flex">
+    <!-- Sidebar -->
+    <aside class="sidebar bg-dark text-white">
+        <div class="logo text-center py-3">
+            <img src="assets/images/logo.png" alt="Logo" class="img-fluid" />
+        </div>
 
-<router-outlet></router-outlet>
+        <ul class="nav flex-column px-3">
+            <li class="nav-item" *ngFor="let item of menuItems">
+                <a class="nav-link d-flex align-items-center text-white" href="#">
+                    <i class="bi" [ngClass]="item.icon"></i>
+                    <span class="ms-2">{{ item.label }}</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content flex-grow-1">
+        <header class="topbar d-flex justify-content-end align-items-center p-3 shadow-sm">
+            <!-- <div class="toggle-btn d-lg-none">
+                <i class="bi bi-list fs-3"></i>
+            </div> -->
+            <div class="d-flex align-items-center">
+                <select class="form-select mx-3">
+                    <option>English</option>
+                    <option>Hindi</option>
+                </select>
+                <div class="notification position-relative">
+                    <i class="bi bi-bell fs-4"></i>
+                    <span
+                        class="badge bg-success position-absolute top-0 start-100 translate-middle p-1 border border-light rounded-circle"></span>
+                </div>
+                <span class="d-inline-block mx-2 user-name fw-semibold" style="width: fit-content">{{userInfo?.name}}</span>
+                <i class="bi bi-person-circle fs-4"></i>
+            </div>
+        </header>
+
+        <!-- Page Content (Dashboard, etc.) -->
+        <main class="p-4">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</div>
